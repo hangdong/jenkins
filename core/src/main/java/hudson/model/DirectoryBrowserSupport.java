@@ -241,7 +241,7 @@ public final class DirectoryBrowserSupport implements HttpResponse {
                 //zip(rsp, root, baseFile, rest);
                 rsp.setContentType("text/plain;charset=UTF-8");
                 try (OutputStream os = rsp.getOutputStream()) {
-                    os.write("Good try man, workspace zip is not supported on this jenkins instance");
+                    os.write("Good try man, workspace zip is not supported on this jenkins instance".getBytes(StandardCharsets.UTF_8));
                     os.write('\n');
                     os.flush();
                 }
