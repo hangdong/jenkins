@@ -208,8 +208,6 @@ public final class DirectoryBrowserSupport implements HttpResponse {
                     // the last 'bar.zip' portion is to causes browses to set a good default file name.
                     // so the 'rest' portion ends here.
                     zip=true;
-                    // hang breaking this zip function by making it return early
-                    return; 
                     break;
                 }
                 if(pathElement.equals("*plain*")) {
@@ -239,8 +237,14 @@ public final class DirectoryBrowserSupport implements HttpResponse {
 
         if(baseFile.isDirectory()) {
             if(zip) {
-                rsp.setContentType("application/zip");
-                zip(rsp, root, baseFile, rest);
+                //rsp.setContentType("application/zip");
+                //zip(rsp, root, baseFile, rest);
+                rsp.setContentType("text/plain;charset=UTF-8");
+                try (OutputStream os = rsp.getOutputStream()) {
+                    os.write("Good try man, workspace zip is not supported on this jenkins instance");
+                    os.write('\n');
+                    os.flush();
+                }
                 return;
             }
             if (plain) {
