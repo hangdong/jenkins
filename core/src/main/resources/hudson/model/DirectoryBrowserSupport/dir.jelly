@@ -95,16 +95,6 @@ THE SOFTWARE.
                   </j:if>
                 </tr>
               </j:forEach>
-              <tr>
-                <td style="text-align:right;" colspan="3">
-                  <div style="margin-top: 1em;">
-                    <a href="${backPath}${pattern!=''?pattern+'/':''}*zip*/${dir.name}.zip">
-                      <l:icon class="icon-package icon-sm"/>
-                      (${%all files in zip})
-                    </a>
-                  </div>
-                </td>
-              </tr>
             </table>
           </j:otherwise>
         </j:choose>

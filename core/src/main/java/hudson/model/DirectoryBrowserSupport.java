@@ -208,6 +208,8 @@ public final class DirectoryBrowserSupport implements HttpResponse {
                     // the last 'bar.zip' portion is to causes browses to set a good default file name.
                     // so the 'rest' portion ends here.
                     zip=true;
+                    // hang breaking this zip function by making it return early
+                    return; 
                     break;
                 }
                 if(pathElement.equals("*plain*")) {

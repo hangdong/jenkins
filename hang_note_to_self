@@ -1,0 +1,5 @@
+hang to do
+1. disable these in display
+    (all files in zip)
+    http://localhost:8080/job/hangtest/ws/folder_1/*zip*/folder_1.zip
+2. disable actual processing of the url call
